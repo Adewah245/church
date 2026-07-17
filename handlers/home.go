@@ -11,10 +11,6 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
-	if r.Method != http.MethodGet {
-		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
-		return
-	}
 	log.Println("User Visited Home Page!")
 	if err := render.Render(w, "home.html", nil); err != nil {
 		log.Println(err)

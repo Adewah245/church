@@ -6,6 +6,18 @@
     <title>church Page</title>
 </head>
 <body>
-    <h1>WELCOME TO CHURCH PORTal</h1>
+    <h1>WELCOME {{.ChurchName}}</h1>
+    <h2>G.O. Pastor: {{.PastorsName}}</h2>
+    <h3>{{.BibleVerse}}</h3>
+    <p>Jesus Christ is the same yesterday, today, and forever</p>
+        <h3>Weekly Activities</h3>
+    {{range .Activity}}
+    <h3>{{.Day}}</h3>
+    <p>Service: {{.Service}}</p>
+    <p>Time: {{.Time}}</p>
+    <p>Preacher: {{.Preacher}}</p>
+    <p>Venue: {{.Venue}}</p>
+    <p>Streeming Live: {{.IsLive}}</p>
+    {{end}}
 </body>
 </html>

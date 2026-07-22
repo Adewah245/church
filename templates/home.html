@@ -6,6 +6,12 @@
     <title>church Page</title>
 </head>
 <body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/contact">Contact Us</a> |
+        <a href="/about">About Us</a> |
+        <a href="/members">members</a>
+    </nav>
     <h1>WELCOME {{.ChurchName}}</h1>
     <h2>G.O. Pastor: {{.PastorsName}}</h2>
     <h3>{{.BibleVerse}}</h3>
@@ -17,7 +23,11 @@
     <p>Time: {{.Time}}</p>
     <p>Preacher: {{.Preacher}}</p>
     <p>Venue: {{.Venue}}</p>
-    <p>Streeming Live: {{.IsLive}}</p>
+    {{if .IsLive}}
+    <p>Status:🟢  Live</p>
+    {{else}}
+    <p>Status:🔴  Offline</p>
+    {{end}}
     {{end}}
 </body>
 </html>

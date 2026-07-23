@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>church Page</title>
-</head>
-<body>
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/contact">Contact Us</a> |
-        <a href="/about">About Us</a> |
-        <a href="/members">members</a>
-    </nav>
+    {{templates "header.html"}}
+    {{templates "navigation.html"}}
     <h1>WELCOME {{.ChurchName}}</h1>
     <h2>G.O. Pastor: {{.PastorsName}}</h2>
     <h3>{{.BibleVerse}}</h3>
     <p>Jesus Christ is the same yesterday, today, and forever</p>
         <h3>Weekly Activities</h3>
+        <div>
     {{range .Activity}}
     <h3>{{.Day}}</h3>
     <p>Service: {{.Service}}</p>
@@ -28,6 +17,8 @@
     {{else}}
     <p>Status:🔴  Offline</p>
     {{end}}
+    <br>
+    <hr>
+        </div>
     {{end}}
-</body>
-</html>
+    {{templates "footer.html"}}
